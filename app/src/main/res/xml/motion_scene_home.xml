@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/textView"
+            android:layout_width="@dimen/text_view_width"
+            android:layout_height="@dimen/text_view_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/imageView1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:alpha="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/textView"
+            android:layout_width="@dimen/text_view_width"
+            android:layout_height="@dimen/text_view_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/imageView1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="90dp"
+            android:alpha="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="3000">
+
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@id/imageView1" />
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/textView" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="parentRelative"
+                app:motionTarget="@id/imageView1"
+                app:percentX="0" />
+
+            <KeyPosition
+                app:framePosition="70"
+                app:keyPositionType="parentRelative"
+                app:motionTarget="@id/imageView1"
+                app:percentX="1" />
+
+            <KeyAttribute
+                android:rotation="45"
+                app:framePosition="50"
+                app:motionTarget="@id/imageView1" />
+            <KeyAttribute
+                android:rotation="-45"
+                app:framePosition="3"
+                app:motionTarget="@id/imageView1" />
+
+            <KeyAttribute
+                android:rotation="-45"
+                app:framePosition="70"
+                app:motionTarget="@id/imageView1" />
+
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@id/imageView1">
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="@color/design_default_color_primary_dark" />
+            </KeyAttribute>
+
+        </KeyFrameSet>
+
+    </Transition>
+
+</MotionScene>
