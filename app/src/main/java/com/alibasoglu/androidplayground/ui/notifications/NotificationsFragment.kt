@@ -1,42 +1,31 @@
 package com.alibasoglu.androidplayground.ui.notifications
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.alibasoglu.androidplayground.R
 import com.alibasoglu.androidplayground.databinding.FragmentNotificationsBinding
+import com.alibasoglu.androidplayground.viewBinding
 
-class NotificationsFragment : Fragment() {
+class NotificationsFragment : Fragment(R.layout.fragment_notifications) {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private val binding by viewBinding(FragmentNotificationsBinding::bind)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUI()
+    }
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private fun initUI() {
+        // _binding?.input2?.setErrorMessage("hatali sifre")
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
-
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        with(binding) {
+            halfCircleProgressBar.setProgress(50)
+            progressBar2.setProgress(70)
+            button.setOnClickListener {
+                halfCircleProgressBar.setProgress(90)
+                progressBar2.setProgress(10)
+            }
         }
-        return root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

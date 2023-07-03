@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomTextInputLayout">
+        <attr name="labelText" format="string" />
+        <attr name="passwordToggleDrawable" format="reference" />
+        <attr name="isPasswordField" format="boolean" />
+
+    </declare-styleable>
+
+</resources>

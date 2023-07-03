@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CinemaxTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="hintTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <style name="CustomTextInputLayout">
+        <item name="boxCollapsedPaddingTop">-16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="boxBackgroundColor">@color/edittextbackgroundcolor</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textAppearance">@color/black</item>
+        <item name="hintTextAppearance">@color/black</item>
+        <item name="hintTextColor">@color/black</item>
+        <item name="boxStrokeColor">@color/black</item>
+    </style>
+
+    <style name="CustomTextInputEditText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:paddingTop">@dimen/margin_12</item>
+        <item name="android:paddingBottom">@dimen/margin_12</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+    </style>
+
+    <dimen name="margin_12">12dp</dimen>
+</resources>

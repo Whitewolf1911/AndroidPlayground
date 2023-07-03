@@ -3,20 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.notifications.NotificationsFragment">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Buton"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.alibasoglu.androidplayground.ui.CustomTextInputLayout
+        android:id="@+id/input2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:isPasswordField="true"
+        app:labelText="Şifre"
+        app:layout_constraintTop_toBottomOf="@id/button" />
+
+    <com.alibasoglu.androidplayground.ui.HalfCircularProgressBar
+        android:id="@+id/halfCircleProgressBar"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input2" />
+
+    <com.alibasoglu.androidplayground.ui.HalfCircularProgressBar
+        android:id="@+id/progressBar2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="@id/halfCircleProgressBar"
+        app:layout_constraintStart_toStartOf="@id/halfCircleProgressBar"
+        app:layout_constraintTop_toTopOf="@id/halfCircleProgressBar" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
